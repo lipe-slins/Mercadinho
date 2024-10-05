@@ -7,12 +7,13 @@ app.use(express.json());
 app.use(cors());
 
 // Conectar ao MongoDB
-mongoose.connect('mongodb://localhost:27017/mercadinho', { 
+mongoose.connect('mongodb+srv://api_contato:ZvdBgz0EZMWz7oqz@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-  .then(() => console.log('Conectado ao MongoDB'))
+  .then(() => console.log('Conectado ao MongoDB Atlas'))
   .catch(err => console.error('Erro ao conectar ao MongoDB', err));
+
 
 // Definir um schema para os produtos
 const produtoSchema = new mongoose.Schema({
